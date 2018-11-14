@@ -1,0 +1,88 @@
+#include <iostream>
+using namespace std;
+
+struct Node{
+    int data;
+    struct Node *next;
+};
+
+int main()
+{
+    Node *node, *head,*find,*x, *temp;
+    int flag=0;
+    node = new Node;
+
+    cin>>node->data;
+    node->next=NULL;
+    head=node;
+    x=head;
+
+    int n;
+    cout<<"How many node do you want to create: ";
+    cin>>n;
+
+    for(int i=0; i<n; i++){
+        temp = new Node;
+        cin>>temp->data;
+        temp->next=NULL;
+        x->next=temp;
+        x=x->next;
+    }
+    x=head;
+
+    for(int i=0; i<n+1; i++){
+        cout<<x->data<<" ";
+        x=x->next;
+    }
+    cout<<endl;
+
+    cout<<"Nodes creation complete"<<endl;
+    cout<<"Adding new node before the head"<<endl;
+
+    x=head;
+    cin>>temp->data;
+    temp->next=x;     ///x=head;
+    head=temp;
+
+    cout<<endl;
+    x=head;
+    for(int i=0; i<n+2; i++){
+        cout<<x->data<<" ";
+        x=x->next;
+    }
+    cout<<endl;
+
+    cout<<"New Node Added before the main head"<<endl;
+
+    cout<<"Which Value do you want to Check: ";
+
+    cin>>find->data;
+
+    x=head;
+    for(int i=0; i<n+2; i++){
+        if(find->data==x->data){
+            flag=1;
+            break;
+        }
+        x=x->next;
+    }
+
+    if(flag==1){
+        cout<<"Value present"<<endl;
+    }else{
+        cout<<"Value not present"<<endl;
+    }
+
+
+    cout<<endl;
+    cout<<"Value Checking complete"<<endl;
+
+    cout<<endl;
+    x=head;
+    for(int i=0; i<n+2; i++){
+        cout<<x->data<<" ";
+        x=x->next;
+    }
+
+    return 0;
+}
